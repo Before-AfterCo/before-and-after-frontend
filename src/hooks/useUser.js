@@ -3,6 +3,7 @@ import {getUserById} from '../api/userApi';
 
 const useUser = (userId) => {
     const [userName, setUserName] = useState('');
+    const [avatar, setAvatar] = useState(null);
     const [isLoading, setIsLoading] = useState(false);
     const [error, setError] = useState(null);
 
@@ -14,6 +15,7 @@ const useUser = (userId) => {
                 .then(response => {
                     const name = response.data.userName.charAt(0).toUpperCase() + response.data.userName.slice(1);
                     setUserName(name);
+                    setAvatar(response.data.avatar)
                     console.log("User name is: " + name);
                 })
                 .catch(error => {
@@ -27,7 +29,7 @@ const useUser = (userId) => {
     }, [userId]);
 
 
-    return {userName, isLoading, error};
+    return {userName,avatar, isLoading, error};
 };
 
 export default useUser;

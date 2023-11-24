@@ -13,9 +13,14 @@ const BottomNav = () => {
 
     return (
         <AppBar position="fixed" sx={{top: 'auto', bottom: 0}}>
-            <Toolbar sx={{justifyContent: 'center'}}>
+            <Toolbar sx={{
+                justifyContent: 'center', display: 'flex',
+                alignItems: 'center',
+                backgroundColor: '#202830',
+                boxShadow: '0px 4px 45px rgba(0, 0, 0, 0.8)',
+            }}>
                 <div style={{padding: '0 1.5%'}}>
-                    <Fab color="primary" aria-label="home" onClick={() => navigate('/')}>
+                    <Fab sx={{background:'#EA9215'}} color="primary" aria-label="home" onClick={() => navigate('/')}>
                         <HomeOutlinedIcon/>
                     </Fab>
                 </div>
@@ -26,13 +31,13 @@ const BottomNav = () => {
                     </Fab>
                 </div>
                 <div style={{padding: '0 1.5%'}}>
-                    <Fab color="primary" aria-label="add"
+                    <Fab sx={{background:'#EEEEEE'}}  color="black" aria-label="add"
                          onClick={() => navigate(sessionStorage.getItem("jwt") ? '/add' : '/signin')}>
                         <AddIcon/>
                     </Fab>
                 </div>
                 <div style={{padding: '0 1.5%'}}>
-                    <Fab color="primary" aria-label="profile"
+                    <Fab sx={{background:'#EEEEEE'}}  color="black" aria-label="profile"
                          onClick={() => navigate(sessionStorage.getItem("jwt") ? '/profile' : '/signin')}>
                         <PersonOutlineIcon/>
                     </Fab>

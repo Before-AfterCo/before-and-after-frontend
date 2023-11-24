@@ -65,7 +65,7 @@ const ContactDetailsForm = ({
                                     onChange={handleFormInputChange}
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={10}>
                                 <TextField
                                     fullWidth
                                     label="Phone Number"
@@ -76,7 +76,16 @@ const ContactDetailsForm = ({
                                     helperText= "Enter the country code."
                                 />
                             </Grid>
-                            <Grid item xs={6}>
+                            <Grid item xs={10}>
+                                <TextField
+                                    fullWidth
+                                    label="Email"
+                                    name="email"
+                                    value={contactDetails.email || formData.email}
+                                    onChange={handleFormInputChange}
+                                />
+                            </Grid>
+                            <Grid item xs={10}>
                                 <TextField
                                     fullWidth
                                     label="Webpage"

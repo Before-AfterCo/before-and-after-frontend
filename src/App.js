@@ -10,9 +10,14 @@ import Profile from "./components/profil/Profile";
 import ForgotPassword from "./components/user/ForgotPassword";
 
 function App() {
+    const appStyle = {
+        backgroundColor: '#3A4750', // Set the background color to black
+        minHeight: '100vh', // Ensure the app takes at least the full height of the viewport
+    };
+
 
     return (
-        <div className="App">
+        <div className="App" style={appStyle}>
             <>
                 <BrowserRouter>
                     <Routes>
